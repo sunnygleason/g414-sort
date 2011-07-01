@@ -1,4 +1,4 @@
-package com.g414.sort;
+package com.g414.sort.segment;
 
 import java.io.IOException;
 

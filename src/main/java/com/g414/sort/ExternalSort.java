@@ -8,6 +8,9 @@ import com.g414.sort.api.Sorter;
 import com.g414.sort.api.SortConfig;
 import com.g414.sort.impl.StandardSortConfig;
 import com.g414.sort.impl.StandardSorter;
+import com.g414.sort.segment.SegmentedInput;
+import com.g414.sort.segment.SegmentedOutput;
+import com.g414.sort.segment.SegmentedOutputProvider;
 
 /**
  * Collection of helper methods to use for pre-sorting data files.
@@ -124,11 +127,11 @@ public class ExternalSort
 
 	/*
 	 ****************************************************************
-	 * Methods for sorting pre-sorting sorted data
+	 * Methods for full processing (pre-sort, sort) of data
 	 ****************************************************************
 	 */
 
-	public < T > boolean readAndSort(SortableDataSource< ? extends T > sdsIn,
+	public <T> boolean readAndSort(SortableDataSource< ? extends T > sdsIn,
 		SortableDataSourceProvider< ? extends T > sdspTemp, SortableDataWriter< ? super T > sdwTemp,
 		Comparator< ? super T > cmpT,
 		SegmentedOutputProvider sopTemps,
@@ -149,6 +152,15 @@ public class ExternalSort
 		return this.< T >sort( sdspTemp, sdwTemp, cmpT, presorted, sopTemps, ostFinal );
 	}
 
+       /*
+        ****************************************************************
+        * Main-sort method(s)
+        ****************************************************************
+        */
+
+	/**
+	 * Method for full sorting of pre-sorted data.
+	 */
 	public < T > boolean sort(SortableDataSourceProvider< ? extends T > sources, SortableDataWriter< ? super T > target,
 		Comparator< ? super T > cmpT,
 		SegmentedInput presorted, SegmentedOutputProvider sopTemps,

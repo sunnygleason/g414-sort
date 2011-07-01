@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import com.g414.sort.api.SortConfig;
+import com.g414.sort.segment.SegmentedInput;
+import com.g414.sort.segment.SegmentedOutput;
 
 /**
  * Helper class that manages first part of generic sorting process:

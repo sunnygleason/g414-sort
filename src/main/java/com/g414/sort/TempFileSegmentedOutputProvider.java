@@ -3,6 +3,9 @@ package com.g414.sort;
 import java.io.IOException;
 
 import com.g414.sort.api.SortConfig;
+import com.g414.sort.segment.SegmentedOutput;
+import com.g414.sort.segment.SegmentedOutputFile;
+import com.g414.sort.segment.SegmentedOutputProvider;
 
 public class TempFileSegmentedOutputProvider implements SegmentedOutputProvider
 {

@@ -3,6 +3,9 @@ package com.g414.sort;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import com.g414.sort.segment.SegmentedInput;
+import com.g414.sort.segment.SegmentedOutput;
+
 public class SingletonSegmentedOutputStream implements SegmentedOutput {
 	private final OutputStream ostDelegate;
 	private boolean flgOpened = false;
